@@ -1,5 +1,11 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>Monsters</h1>
 
-{{outlet}}
+<div class="monsters-index-list">
+  {{#each model as |monster|}}
+    <div class="monster {{if monster.active 'dark'}}">
+      lvl {{monster.name}} {{monster.level}}
+      <br>
+      <button {{action 'toggleActive' monster}}>Toggle Active</button>
+    </div>
+  {{/each}}
+</div>
